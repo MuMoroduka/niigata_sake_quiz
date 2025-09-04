@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>新潟地酒クイズ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- スタート画面 -->
+  <div id="start-screen" class="screen active">
+    <h1 class="main-title">新潟地酒クイズ</h1>
+    <p class="subtitle">新潟の酒をどれだけ知ってる？</p>
+    <div class="button-container">
+      <button id="start-btn">はじめから</button>
+      <button id="continue-btn" style="display: none;">続きから</button>
+      <button id="show-scores-btn" style="display: none;">スコア表示</button>
+      <button id="reset-btn" style="display: none;">リセット</button>
+    </div>
+    <p class="description">全10問ランダム出題 / 生産地や特徴を学べます！</p>
+  </div>
+
+  <!-- 問題画面 -->
+  <div id="quiz-screen" class="screen">
+    <div id="feedback-container">
+      <div id="feedback-correct" class="feedback">〇</div>
+      <div id="feedback-incorrect" class="feedback">×</div>
+    </div>
+    <div id="question"></div>
+    <div id="choices"></div>
+    <div id="explanation"></div>
+    <div id="area"></div>
+    <div class="quiz-controls">
+      <button id="quit-btn">やめる</button>
+      <button id="next-btn" style="display:none;">次の問題</button>
+    </div>
+  </div>
+
+  <!-- スコア画面 -->
+  <div id="score-screen" class="screen">
+    <h2>クイズ終了！</h2>
+    <p>あなたのスコア: <span id="score"></span> / 10</p>
+    <button id="restart-btn">もう一度挑戦</button>
+    <button id="quit-btn-score" class="btn">スタート画面に戻る</button>
+  </div>
+
+  <!-- スコア履歴画面 -->
+  <div id="score-history-screen" class="screen">
+    <h2>スコア履歴</h2>
+    <ul id="score-list"></ul>
+    <button id="back-to-start-btn" class="btn">戻る</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
