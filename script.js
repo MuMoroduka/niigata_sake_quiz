@@ -272,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showQuestionScreen() {
+    document.getElementById('next-btn').textContent = '次の問題';
     const q = getRandomQuestion();
     if (!q) return;
 
@@ -340,7 +341,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       document.getElementById('explanation').textContent = q.explanation;
       document.getElementById('area').textContent = '生産地: ' + q.area;
-      document.getElementById('next-btn').style.display = 'inline-block';
+      const nextBtn = document.getElementById('next-btn');
+      if (counter >= 10) {
+        nextBtn.textContent = '終了';
+      }
+      nextBtn.style.display = 'inline-block';
       saveProgress();
     }, 1000);
   }
