@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>　　　　　　　　　　　 <!-- ヒント表示（時間経過かヒントボタン）、スコア表示でその時に出た問題と正答を表示 -->
+<html lang="ja">  
 <head>
   <meta charset="UTF-8">
   <title>新潟地酒クイズ</title>
@@ -12,13 +12,16 @@
 
   <!-- スタート画面 -->
   <div id="start-screen" class="screen active">
+    <div id="reset-all-container">
+      <button id="reset-all-btn" style="display: none;">全データリセット</button>
+    </div>
     <h1 class="main-title">新潟地酒クイズ</h1>
     <p class="subtitle">新潟の酒をどれだけ知ってる？</p>
     <div class="button-container">
       <button id="start-btn">はじめから</button>
       <button id="continue-btn" style="display: none;">続きから</button>
       <button id="show-scores-btn" style="display: none;">スコア表示</button>
-      <button id="reset-btn" style="display: none;">リセット</button>
+      <button id="reset-progress-btn" style="display: none;">進捗をリセット</button>
     </div>
     <p class="description">全10問ランダム出題 / 生産地や特徴を学べます！</p>
   </div>
@@ -37,9 +40,14 @@
       <button id="quit-btn">やめる</button>
       <button id="next-btn" style="display:none;">次の問題</button>
     </div>
+    <div id="hint-container">
+      <button id="hint-btn">ヒントを見る</button>
+      <p id="hint-text" class="hint-box" style="display:none;"></p>
+    </div>
   </div>
 
   <!-- スコア画面 -->
+   
   <div id="score-screen" class="screen">
     <h2>クイズ終了！</h2>
     <p>あなたのスコア: <span id="score"></span> / 10</p>
@@ -52,6 +60,18 @@
     <h2>スコア履歴</h2>
     <ul id="score-list"></ul>
     <button id="back-to-start-btn" class="btn">戻る</button>
+  </div>
+
+  <!-- クイズ履歴詳細画面 -->
+  <div id="review-screen" class="screen">
+    <h2>クイズ履歴詳細</h2>
+    <div id="review-details"></div>
+    <div id="review-pagination">
+      <button id="prev-review-btn">前の5件</button>
+      <span id="review-page-info"></span>
+      <button id="next-review-btn">次の5件</button>
+    </div>
+    <button id="back-to-history-btn" class="btn">スコア履歴に戻る</button>
   </div>
 
   <script src="script.js"></script>
