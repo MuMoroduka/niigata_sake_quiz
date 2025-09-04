@@ -35,6 +35,27 @@ body {
   z-index: 10; /* ボタンなどを雪より手前に */
 }
 
+#reset-all-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#reset-all-container button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#reset-all-container button:hover {
+  background-color: #c0392b;
+}
+
 .main-title {
   font-family: 'Sawarabi Mincho', serif;
   font-size: 4.5rem;
@@ -66,7 +87,7 @@ body {
   animation-fill-mode: backwards;
 }
 
-#start-screen button {
+#start-screen .button-container button {
   display: block;
   width: 280px;
   margin: 15px auto;
@@ -82,20 +103,28 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#start-screen button:hover {
+#start-screen .button-container button:hover {
   background-color: #4a6582;
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#start-screen button:active {
+#start-screen .button-container button:active {
   transform: translateY(1px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+#reset-progress-btn {
+  background-color: #95a5a6 !important;
+}
+
+#reset-progress-btn:hover {
+  background-color: #7f8c8d !important;
+}
+
 
 /* クイズ画面とスコア画面のスタイル（既存のものをベースに調整） */
-#quiz-screen, #score-screen, #score-history-screen {
+#quiz-screen, #score-screen, #score-history-screen, #review-screen {
   background-color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   height: auto;
@@ -118,16 +147,21 @@ body {
 }
 
 #choices button {
-  display: block;
+  display: flex; /* Use flexbox for centering */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 90%;
-  margin: 10px auto;
-  padding: 15px;
+  min-height: 3.5em; /* Set a minimum height */
+  margin: 8px auto; /* Adjust margin */
+  padding: 10px;
   color: #FFF;
   background: #3498db;
   border: none;
   border-radius: 8px;
   transition: background-color 0.3s;
   font-size: 16px;
+  line-height: 1.4; /* Improve line spacing for wrapped text */
 }
 
 #choices button:hover {
@@ -186,7 +220,7 @@ body {
 #feedback-incorrect { color: #3498db; }
 
 /* スコア履歴画面のスタイル */
-#score-history-screen h2 {
+#score-history-screen h2, #review-screen h2 {
   color: #2c3e50;
   font-size: 2rem;
 }
@@ -194,26 +228,43 @@ body {
 #score-list {
   list-style: none;
   padding: 0;
-  width: 80%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 450px;
   margin: 20px 0;
   max-height: 300px;
   overflow-y: auto;
 }
 
 #score-list li {
+  margin-bottom: 10px;
+}
+
+#score-list button {
+  width: 100%;
   background-color: #ecf0f1;
   padding: 15px 20px;
-  margin-bottom: 10px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
   font-weight: bold;
+  font-family: 'Sawarabi Mincho', serif;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-#score-list li .score-date {
+#score-list button:hover {
+  background-color: #e2e6e8;
+}
+
+#score-list button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#score-list button .score-date {
   font-size: 0.9rem;
   color: #7f8c8d;
   font-weight: normal;
@@ -223,9 +274,11 @@ body {
   text-align: center;
   color: #7f8c8d;
   font-size: 1rem;
+  background-color: transparent;
+  padding: 15px;
 }
 
-#back-to-start-btn {
+.btn {
     margin-top: 20px;
     padding: 12px 35px;
     font-size: 1.1rem;
@@ -239,7 +292,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#back-to-start-btn:hover {
+.btn:hover {
     background: #4a6582;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -288,6 +341,40 @@ body {
   background-color: #d1d5d8;
 }
 
+/* ヒント機能のスタイル */
+#hint-container {
+  margin-top: 15px;
+  min-height: 40px; /* 最小高さを確保 */
+  width: 90%;
+  max-width: 450px;
+}
+
+#hint-btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-family: 'Sawarabi Mincho', serif;
+  border-radius: 20px;
+  border: 1px solid #f1c40f;
+  cursor: pointer;
+  background-color: #f1c40f;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#hint-btn:hover {
+  background-color: #f39c12;
+}
+
+.hint-box {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  padding: 15px;
+  border-radius: 5px;
+  color: #8a6d3b;
+  text-align: center;
+}
+
+
 /* フェードインアニメーション */
 @keyframes fadeIn {
   from {
@@ -298,4 +385,85 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* クイズ履歴詳細画面のスタイル */
+#review-details {
+  width: 100%;
+  height: 380px; /* 高さを固定 */
+  overflow-y: auto; /* スクロール可能に */
+  padding: 0 10px;
+}
+
+.review-item {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.review-question {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.review-user-answer,
+.review-correct-answer {
+  margin: 8px 0;
+  padding-left: 10px;
+  border-left: 4px solid;
+}
+
+.review-user-answer.correct {
+  border-left-color: #2ecc71; /* 正解だった場合 */
+  background-color: #f0fff4;
+}
+
+.review-user-answer.incorrect {
+  border-left-color: #e74c3c; /* 不正解だった場合 */
+  background-color: #fff2f2;
+}
+
+.review-correct-answer {
+  border-left-color: #3498db; /* 正解の表示 */
+  background-color: #f2f9ff;
+}
+
+.review-explanation {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+#review-pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px 0;
+}
+
+#review-pagination button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#review-pagination button:hover {
+  background: #2980b9;
+}
+
+#review-pagination button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
