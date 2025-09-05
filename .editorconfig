@@ -1,0 +1,8 @@
+# .editorconfig
+root = true
+
+[*]
+charset = utf-8       # 文字コードを UTF-8 に統一
+end_of_line = lf      # 改行コードを LF に統一
+insert_final_newline = true  # ファイルの最後に改行を入れる
+trim_trailing_whitespace = true # 行末の余計なスペースを削除
