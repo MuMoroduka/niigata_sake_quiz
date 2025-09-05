@@ -407,7 +407,8 @@
       "酒3": 0,
       "酒4": 0
     },
-    "explanation": "「魚沼」は米のまろやかな旨みと締まる辛口のバランスが特徴です([saketime.jp](https://www.saketime.jp/ranking/niigata/page%3A3/))"
+    "explanation": "「魚沼」は米のまろやかな旨みと締まる辛口のバランスが特徴です",
+    "hint": "米どころの新潟ならではの、米の旨味がしっかり感じられる辛口酒です"
   },
   {
     "index": 29,
@@ -425,7 +426,8 @@
       "酒3": 0,
       "酒4": 0
     },
-    "explanation": "「魚沼」では、50年かけて地下を通って流れてくる雪解け水を使用しています([saketime.jp](https://www.saketime.jp/ranking/niigata/page%3A3/))"
+    "explanation": "「魚沼」では、50年かけて地下を通って流れてくる雪解け水を使用しています",
+    "hint": "雪解け水が時間をかけて濾過されることで、まろやかな酒質に影響します"
   },
   {
     "index": 30,
@@ -443,7 +445,8 @@
       "酒3": 0,
       "酒4": 0
     },
-    "explanation": "「伊乎乃」は軽やかで上品な甘酸っぱさと滑らかな口当たりが特徴です([saketime.jp](https://www.saketime.jp/ranking/niigata/page%3A3/))"
+    "explanation": "「伊乎乃」は軽やかで上品な甘酸っぱさと滑らかな口当たりが特徴です",
+     "hint": "軽やかで爽やか、口当たりも滑らかで女性にも人気のある酒です"
   },
   {
     "index": 31,
@@ -461,7 +464,8 @@
       "酒3": 0,
       "酒4": 0
     },
-    "explanation": "「長者盛」は新潟銘醸が造る伝統的な銘柄として知られています([saketime.jp](https://www.saketime.jp/ranking/niigata/page%3A3/))"
+    "explanation": "「長者盛」は新潟銘醸が造る伝統的な銘柄として知られています",
+     "hint": "長年続く新潟の蔵元が作る、歴史ある銘柄です"
   },
   {
     "index": 32,
@@ -479,7 +483,8 @@
       "酒3": 0,
       "酒4": 0
     },
-    "explanation": "「鮎正宗」は、昭和初期に妙高高原を訪れた殿下が鮎釣りをたのしんだことに由来して命名されました([saketime.jp](https://www.saketime.jp/ranking/niigata/page%3A3/))"
+    "explanation": "「鮎正宗」は、昭和初期に妙高高原を訪れた殿下が鮎釣りをたのしんだことに由来して命名されました",
+      "hint": "銘柄名には鮎が入っていますが、由来は味ではなく、歴史上のエピソードに関係しています"
   }
 ]
 
