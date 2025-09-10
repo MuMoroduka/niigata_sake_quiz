@@ -32,7 +32,7 @@
 3.  「python3 -m http.server」　もしくは　「python -m http.server」で鯖立てします。
 4.  http://localhost:8000/  にアクセスします。
  
- 
+ *chromeでの実行でエラーが出る場合、edgeで実行してください
  
 ## ファイル構成
  
